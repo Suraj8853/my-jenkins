@@ -1,12 +1,12 @@
 pipeline {
-    agent any // Use any available agent (your local machine)
+    agent any 
 
     stages {
         stage('Build') {
             steps {
                 script {
                     bat 'npm install' // Install dependencies
-                    // Add steps to run tests if you have any (e.g., 'npm test')
+                    
                 }
             }
         }
