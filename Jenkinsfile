@@ -21,6 +21,8 @@ pipeline {
 
                     // Copy build folder to the deployment directory
                     bat "xcopy build \"${deployDir}\\build\" /s /e /y /i"
+                     bat 'npm install -g serve' 
+                     bat 'serve -s build'
                 }
             }
         }
