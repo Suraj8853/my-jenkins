@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     bat 'npm run build' 
-                    bat 'copy /Y build "D:\\jenkins-projects\\myapp"'
+                    bat 'copy /Y build "D:\\jenkins-projects"'
                 }
             }
         }
