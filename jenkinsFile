@@ -1,0 +1,22 @@
+pipeline {
+    agent any // Use any available agent (your local machine)
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    bat 'npm install' // Install dependencies
+                    // Add steps to run tests if you have any (e.g., 'npm test')
+                }
+            }
+        }
+        stage('Deploy (Local)') {
+            steps {
+                script {
+                    bat 'npm run build' 
+                    bat 'copy /Y build "D:\jenkins-proj"'
+                }
+            }
+        }
+    }
+}
