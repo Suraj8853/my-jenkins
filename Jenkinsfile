@@ -20,7 +20,7 @@ pipeline {
                     bat "if not exist ${deployDir} mkdir ${deployDir}"
 
                     // Copy build folder to the deployment directory
-                    bat "xcopy build ${deployDir} /s /e /y /i"
+                    bat "xcopy build \"${deployDir}\\build\" /s /e /y /i"
                 }
             }
         }
