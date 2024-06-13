@@ -14,7 +14,13 @@ pipeline {
             steps {
                 script {
                     bat 'npm run build' 
-                   bat 'copy /Y build\*.* "D:\\\\jenkins-proj"'
+                    def deployDir = 'D:/jenkins-proj'
+
+                    // Create the deployment directory if it doesn't exist
+                    bat "if not exist ${deployDir} mkdir ${deployDir}"
+
+                    // Copy build folder to the deployment directory
+                    bat "xcopy build ${deployDir} /s /e /y /i"
                 }
             }
         }
